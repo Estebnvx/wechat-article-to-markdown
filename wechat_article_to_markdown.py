@@ -27,7 +27,8 @@ import markdownify
 from bs4 import BeautifulSoup
 from camoufox.async_api import AsyncCamoufox
 
-OUTPUT_DIR = Path(__file__).parent / "output"
+# Write results to the current working directory by default.
+OUTPUT_DIR = Path.cwd() / "output"
 IMAGE_CONCURRENCY = 5
 
 

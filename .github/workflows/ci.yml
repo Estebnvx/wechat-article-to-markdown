@@ -23,4 +23,4 @@ jobs:
         run: uv build
 
       - name: Run tests
-        run: uv run --with pytest pytest -q
+        run: uv run --with pytest pytest -q -m "not e2e"

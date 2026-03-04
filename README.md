@@ -55,6 +55,20 @@ output/
         └── ...
 ```
 
+
+## Testing
+
+```bash
+# Unit tests (default CI path)
+uv run --with pytest pytest -q -m "not e2e"
+
+# Live E2E against real WeChat articles
+WECHAT_E2E_URLS="https://mp.weixin.qq.com/s/Y7dyRC7CJ09miHWU6LBzBA,https://mp.weixin.qq.com/s/xxxxxxxx" \
+  uv run --with pytest pytest -q -m e2e -s
+```
+
+`e2e` tests require network and browser runtime, so they run via manual GitHub Actions workflow `.github/workflows/e2e.yml`.
+
 ## Use as AI Agent Skill
 
 This project ships with [`SKILL.md`](./SKILL.md), so AI agents can discover and use this tool workflow.

@@ -34,3 +34,8 @@ wechat-article-to-markdown = "wechat_article_to_markdown:main"
 
 [tool.setuptools]
 py-modules = ["wechat_article_to_markdown", "main"]
+
+[tool.pytest.ini_options]
+markers = [
+  "e2e: live end-to-end tests that require network and browser runtime",
+]

